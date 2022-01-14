@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AppWeb from './AppWeb';
+import AppMob from './AppMob';
 import reportWebVitals from './reportWebVitals';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserView>
+      <AppWeb />
+    </BrowserView>
+    <MobileView>
+      <AppMob />
+    </MobileView>
   </React.StrictMode>,
   document.getElementById('root')
 );
